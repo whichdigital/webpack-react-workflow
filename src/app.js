@@ -1,1 +1,4 @@
-console.log( 'This is app.js' );
+var Book = require( 'babel!./book/book.js' );
+
+var book = new Book();
+book.logSomething();
