@@ -1,9 +1,7 @@
 import 'core-js/es5';
-import chai from 'chai';
 import React from 'react/addons';
 import Heading from '../src/book/heading.jsx';
 
-var expect = chai.expect;
 var ReactTestUtils = React.addons.TestUtils;
 
 describe('Heading', function() {
