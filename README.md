@@ -1,11 +1,12 @@
 ## Installation
 ```
+npm install webpack -g
 npm install
 ```
 
 ## Running Webpack
 ```
-webpack src/app.js dist/build.js
+webpack
 ```
 
 ## Running results on command line
