@@ -1,5 +1,5 @@
-var React = require( 'react' );
-require( './heading.css' );
+import React from 'react';
+import './heading.css';
 
 export default class extends React.Component {
   render() {
