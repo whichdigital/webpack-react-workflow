@@ -1,8 +1,9 @@
-import Heading from '../src/book/heading.jsx';
-
+require('core-js/es5');
 var expect = require('chai').expect;
 var React = require('react/addons');
 var ReactTestUtils = React.addons.TestUtils;
+
+import Heading from '../src/book/heading.jsx';
 
 describe('Heading', function() {
   it('is a React element', function() {
