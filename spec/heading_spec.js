@@ -1,12 +1,45 @@
 import Heading from '../src/book/heading.jsx';
 
 var expect = require('chai').expect;
-var React = require('react');
+var React = require('react/addons');
+var ReactTestUtils = React.addons.TestUtils;
 
 describe('Heading', function() {
-  it('outputs html', function() {
-    var result = React.renderToString( <Heading /> );
-    var expectation = 'h1';
-    expect( result ).to.contain( expectation );
+  it('is a React element', function() {
+    let validation = ReactTestUtils.isElement(
+      <Heading />
+    );
+
+    expect(validation).to.be.ok;
+  });
+
+  it('is a Heading React element', function() {
+    let validation = ReactTestUtils.isElementOfType(
+      <Heading />,
+      Heading
+    );
+
+    expect(validation).to.be.ok;
+  });
+
+  it('is not a DOM component', function() {
+    let component = ReactTestUtils.renderIntoDocument(<Heading />);
+    let validation = ReactTestUtils.isDOMComponent(component);
+
+    expect(validation).to.not.be.ok;
+  });
+
+  it('is a composite component', function() {
+    let component = ReactTestUtils.renderIntoDocument(<Heading />);
+    let validation = ReactTestUtils.isCompositeComponent(component);
+
+    expect(validation).to.be.ok;
+  });
+
+  it('is a composite Heading component', function() {
+    let component = ReactTestUtils.renderIntoDocument(<Heading />);
+    let validation = ReactTestUtils.isCompositeComponentWithType(component, Heading);
+
+    expect(validation).to.be.ok;
   });
 });
