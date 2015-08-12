@@ -1,4 +1,8 @@
-import Book from './book/book';
-var React = require('react');
+var React = require( 'react' );
+var Book = require( './book/book.js' );
 
-React.render(<Book />, document.querySelector('body'));
+import Heading from './book/heading.jsx';
+React.render( <Heading />, document.querySelector( 'body' ) );
+
+var book = new Book();
+book.logSomething();

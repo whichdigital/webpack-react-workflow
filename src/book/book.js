@@ -1,11 +1,7 @@
-var React = require('react');
-require('./book.css');
-
-
-export default React.createClass({
-  render() {
-    return (
-      <h1>Foo</h1>
-    )
+class Book {
+  logSomething() {
+    console.log( 'Book.logSomething has been called' );
   }
-});
+}
+
+module.exports = Book;

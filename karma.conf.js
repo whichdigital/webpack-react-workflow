@@ -31,7 +31,14 @@ module.exports = function(config) {
     },
 
 
-    webpack: require('./webpack.config'),
+    webpack: {
+      module: {
+       loaders: [
+         { test: /\.jsx?$/, loader: 'babel', exclude: /(node_modules)/ },
+         { test: /\.css$/, loaders: ['style', 'css'], exclude: /(node_modules)/ }
+       ]
+     }
+    },
 
 
     // test results reporter to use
