@@ -1,12 +1,18 @@
 ## Installation
 ```
 npm install webpack -g
+npm install mocha -g
 npm install
 ```
 
 ## Running Webpack
 ```
 webpack
+```
+
+## Unit tests
+```
+mocha --harmony spec/foo_spec.js
 ```
 
 ## Running results on command line
