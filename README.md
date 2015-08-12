@@ -1,20 +1,18 @@
 ## Installation
 ```
 npm install webpack -g
-npm install mocha -g
+npm install karma-cli -g
 npm install
 ```
 
-## Running Webpack
+## Bundle application
 ```
 webpack
 ```
 
 ## Unit tests
 ```
-mocha --harmony spec/foo_spec.js
-# The below won't work on command line
-mocha --harmony spec/heading_spec.js
+karma start
 ```
 
 ## Running results on command line
