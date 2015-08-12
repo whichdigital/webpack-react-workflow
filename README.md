@@ -13,6 +13,8 @@ webpack
 ## Unit tests
 ```
 mocha --harmony spec/foo_spec.js
+# The below won't work on command line
+mocha --harmony spec/heading_spec.js
 ```
 
 ## Running results on command line
