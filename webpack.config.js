@@ -4,5 +4,10 @@ module.exports = {
     path: './dist',
     filename: 'build.js'
   },
-  devtool: 'source-map'
+  devtool: 'source-map',
+  module: {
+    loaders: [
+      { test: /\.js$/, loader: 'babel', exclude: /(node_modules)/ }
+    ]
+  }
 }
