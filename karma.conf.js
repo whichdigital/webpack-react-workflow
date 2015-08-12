@@ -33,6 +33,9 @@ module.exports = function(config) {
 
     webpack: {
       module: {
+       preLoaders: [
+         { test: /\.jsx?$/, loader: 'isparta', exclude: /\/(spec|node_modules)\// }
+       ],
        loaders: [
          { test: /\.jsx?$/, loader: 'babel', exclude: /(node_modules)/ },
          { test: /\.css$/, loaders: ['style', 'css'], exclude: /(node_modules)/ }
@@ -44,8 +47,12 @@ module.exports = function(config) {
     // test results reporter to use
     // possible values: 'dots', 'progress'
     // available reporters: https://npmjs.org/browse/keyword/karma-reporter
-    reporters: ['progress'],
+    reporters: ['progress', 'coverage'],
 
+    coverageReporter: {
+      dir: 'tmp/coverage',
+      subdir: 'javascript'
+    },
 
     // web server port
     port: 9876,
