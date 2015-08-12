@@ -3,5 +3,6 @@ module.exports = {
   output: {
     path: './dist',
     filename: 'build.js'
-  }
+  },
+  devtool: 'source-map'
 }
