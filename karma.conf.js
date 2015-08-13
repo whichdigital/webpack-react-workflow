@@ -30,11 +30,11 @@ module.exports = function(config) {
       'spec/**/*_spec.js': ['webpack']
     },
 
-
     webpack: {
       module: {
        preLoaders: [
-         { test: /\.jsx?$/, loader: 'isparta', exclude: /\/(spec|node_modules)\// }
+         { test: /\.jsx?$/, loader: 'isparta', exclude: /\/(spec|node_modules)\// },
+         { test: /\.jsx?$/, loader: 'eslint', exclude: /(node_modules)/ }
        ],
        loaders: [
          { test: /\.jsx?$/, loader: 'babel', exclude: /(node_modules)/ },
