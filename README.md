@@ -1,16 +1,30 @@
 ## Installation
 ```
 npm install webpack -g
+npm install webpack-dev-server -g
 npm install karma-cli -g
 npm install
 ```
 
-## Bundle application
-```
-npm run build
-```
+## Workflow
+1. Run webpack-dev-server on port 5000. This will watch your files and reload the page when it detects any change.
+>```
+>webpack-dev-server --port 5000 --inline
+>```  
 
-You could use [http-server](https://www.npmjs.com/package/http-server) in order to start a web server and serve index.html
+2. Run a http server on port 5001 (you could use [http-server](https://www.npmjs.com/package/http-server)). This represents your back-end application (e.g. Rails).
+>```
+>http-server -p 5001
+>```
+
+3. Open http://localhost:5001 on your browser.
+
+4. Make changes (you should see changes being applied simultaneously on the browser). 
+
+5. Once finished changing files, run webpack to compile the bundle(s) into the filesystem.
+>```
+>npm run build
+>```
 
 ## Unit tests and code coverage
 ```
