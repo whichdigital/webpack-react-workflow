@@ -20,6 +20,11 @@
     "style-loader": "^0.12.3",
     "webpack": "^1.11.0"
   },
+  "scripts": {
+    "build": "webpack",
+    "clean": "rm -fr tmp/coverage/javascript/* && rm -fr dist/*",
+    "test": "karma start"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/whichdigital/webpack-react-workflow.git"
