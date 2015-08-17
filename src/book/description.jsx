@@ -1,5 +1,6 @@
 import React from 'react';
 import './description.scss';
+import './base.scss';
 
 export default class extends React.Component {
   render() {
