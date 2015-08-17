@@ -1,4 +1,12 @@
-module.exports = {
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const path = require('path');
+
+const sassLoaders = [
+  'css-loader',
+  'sass-loader?includePaths[]=' + path.resolve(__dirname, './src'),
+];
+
+const config = {
   entry: './src/app.js',
   output: {
     path: './dist',
@@ -8,7 +16,12 @@ module.exports = {
   module: {
     loaders: [
       { test: /\.jsx?$/, loader: 'babel', exclude: /(node_modules)/ },
-      { test: /\.scss$/, loaders: ['style', 'css', 'sass'], exclude: /(node_modules)/ }
+      { test: /\.scss$/, loader: ExtractTextPlugin.extract('style-loader', sassLoaders.join('!')), exclude: /(node_modules)/ }
     ]
-  }
+  },
+  plugins: [
+    new ExtractTextPlugin('build.css')
+  ]
 }
+
+module.exports = config
