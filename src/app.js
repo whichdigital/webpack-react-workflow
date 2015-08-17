@@ -1,8 +1,4 @@
 import React from 'react';
-import Book from './book/book.js';
+import Book from './book/book.jsx';
 
-import Heading from './book/heading.jsx';
-React.render( <Heading />, document.querySelector( 'body' ) );
-
-var book = new Book();
-book.logSomething();
+React.render( <Book />, document.querySelector( 'body' ) );
