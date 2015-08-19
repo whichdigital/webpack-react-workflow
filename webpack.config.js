@@ -15,8 +15,16 @@ const config = {
   devtool: 'source-map',
   module: {
     loaders: [
-      { test: /\.jsx?$/, loader: 'babel', exclude: /(node_modules)/ },
-      { test: /\.scss$/, loader: ExtractTextPlugin.extract('style-loader', sassLoaders.join('!')), exclude: /(node_modules)/ }
+      {
+        test: /\.jsx?$/,
+        loader: 'babel',
+        exclude: /(node_modules)/
+      },
+      {
+        test: /\.scss$/,
+        loader: ExtractTextPlugin.extract('style-loader', sassLoaders.join('!')),
+        exclude: /(node_modules)/
+      }
     ]
   },
   plugins: [
