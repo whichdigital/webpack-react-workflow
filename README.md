@@ -7,12 +7,14 @@ npm install
 
 ## Bundle application
 ```
-webpack
+npm run build
 ```
+
+You could use [http-server](https://www.npmjs.com/package/http-server) in order to start a web server and serve index.html
 
 ## Unit tests and code coverage
 ```
-karma start
+npm test
 ```
 
 ### Code coverage
@@ -29,9 +31,12 @@ generation from other actions that involve various source code transformations.
 This is 100% arbitrary and the coverage reporter might as well be included in
 the subsequent loaders step.
 
-## Running results on command line
+### Running results on command line
 As we have now introduced a React component that depends on the DOM's
 `document` object, you won't be able to run the application directly
 from command line (at least in the current configuration).
 
-You could use [http-server](https://www.npmjs.com/package/http-server) in order to start a web server and serve index.html
+## Clean project
+```
+npm run clean
+```
