@@ -1,10 +1,4 @@
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const path = require('path');
-
-const sassLoaders = [
-  'css-loader',
-  'sass-loader?includePaths[]=' + path.resolve(__dirname, './src'),
-];
 
 const config = {
   entry: './src/app.js',
@@ -22,7 +16,7 @@ const config = {
       },
       {
         test: /\.scss$/,
-        loader: ExtractTextPlugin.extract('style-loader', sassLoaders.join('!')),
+        loader: ExtractTextPlugin.extract('style', 'css!sass'),
         exclude: /(node_modules)/
       }
     ]
