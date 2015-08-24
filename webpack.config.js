@@ -1,4 +1,5 @@
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const AutoPrefixer = require('autoprefixer');
 
 const config = {
   entry: './src/app.js',
@@ -16,11 +17,12 @@ const config = {
       },
       {
         test: /\.scss$/,
-        loader: ExtractTextPlugin.extract('style', 'css!sass'),
+        loader: ExtractTextPlugin.extract('style', 'css!postcss!sass'),
         exclude: /(node_modules)/
       }
     ]
   },
+  postcss: [AutoPrefixer],
   plugins: [
     new ExtractTextPlugin('build.css')
   ]
