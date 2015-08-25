@@ -7,7 +7,7 @@ import Description from '../src/book/description.jsx'
 describe('Book', function() {
   let bookComponent;
 
-  before( function() {
+  before( () => {
     let ReactTestUtils = React.addons.TestUtils,
       shallowRenderer = ReactTestUtils.createRenderer();
 
@@ -15,25 +15,25 @@ describe('Book', function() {
     bookComponent = shallowRenderer.getRenderOutput();
   });
 
-  it('is wrapped in div element', function() {
+  it('is wrapped in div element', () => {
     expect( bookComponent.type ).to.equal( 'div' );
   });
 
-  describe('checks if children exist regardless of their order', function() {
+  describe('checks if children exist regardless of their order', () => {
     let children;
 
-    before( function() {
+    before( () => {
       children = bookComponent.props.children;
     });
 
-    it('includes Heading component', function() {
+    it('includes Heading component', () => {
       let childHeading = children.filter(
         component => component.type === Heading
       );
       expect( childHeading.length ).to.be.ok;
     });
 
-    it('includes Description component', function() {
+    it('includes Description component', () => {
       let childDescription = children.filter(
         component => component.type === Description
       );
@@ -42,8 +42,7 @@ describe('Book', function() {
   });
 
   // An alternative to the two tests above
-  it('includes Heading and Description components in particular order',
-      function() {
+  it('includes Heading and Description components in particular order', () => {
     expect( bookComponent.props.children ).to.eql( [
       <Heading />,
       <Description />
