@@ -1,11 +1,11 @@
 import React from 'react';
-import './heading.scss';
+import './description.scss';
 import './base.scss';
 
 export default class extends React.Component {
   render() {
     return (
-      <h1>Foo</h1>
+      <p className={'green'}>This is a great book!</p>
     )
   }
 }
