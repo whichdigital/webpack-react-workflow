@@ -5,12 +5,31 @@ npm install karma-cli -g
 npm install
 ```
 
-## Bundle application
-```
-npm run build
-```
+## Workflow
+1. Run webpack-dev-server.js with Node. This will run `webpack-dev-server` with
+HMR enabled on port 5000:
+>```
+>node webpack-dev-server.js
+>```
 
-You could use [http-server](https://www.npmjs.com/package/http-server) in order to start a web server and serve index.html
+2. Run an HTTP server on port 5001. This is going to handle your back-end
+application (e.g. Rails).
+One of the available options is [http-server](https://www.npmjs.com/package/http-server).
+>```
+>http-server -p 5001
+>```
+
+3. Open http://localhost:5001 in your browser.
+
+4. Make a change in any of your scripts or stylesheets - you should see these
+changes applied in the browser instantaneously.
+
+
+5. Once finished modifying files, run Webpack to compile the bundle(s) into the
+filesystem.
+>```
+>npm run build
+>```
 
 ## Unit tests and code coverage
 ```
