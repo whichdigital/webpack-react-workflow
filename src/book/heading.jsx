@@ -1,10 +1,10 @@
 import React from 'react';
-import './heading.css';
+import './heading.scss';
 
 export default class extends React.Component {
   render() {
     return (
-      <h1>Foo</h1>
+      <h1 className={'blue'}>Foo</h1>
     )
   }
 }

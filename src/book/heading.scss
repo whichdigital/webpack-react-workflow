@@ -1,0 +1,7 @@
+@import '../colour/colours.scss';
+
+h1 {
+  &.blue {
+    color: $blue;
+  }
+}
