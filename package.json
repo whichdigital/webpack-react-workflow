@@ -10,6 +10,7 @@
     "css-loader": "^0.15.6",
     "eslint": "^1.1.0",
     "eslint-loader": "^1.0.0",
+    "http-server": "^0.8.0",
     "isparta-loader": "^0.2.0",
     "karma": "^0.13.9",
     "karma-chai": "^0.1.0",
@@ -29,6 +30,8 @@
   "scripts": {
     "build": "webpack",
     "clean": "rm -fr tmp/coverage/javascript/* && rm -fr dist/*",
+    "dev-server": "node webpack-dev-server.js",
+    "start": "http-server -p 5001",
     "test": "karma start"
   },
   "repository": {
