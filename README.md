@@ -29,8 +29,16 @@ filesystem.
 >```
 
 ## Unit tests and code coverage
+We use [Mocha](https://mochajs.org), [Chai](http://chaijs.com) and
+[React](http://facebook.github.io/react/)'s `TestUtils` package.
 ```
 npm test
+```
+
+### Linting
+We use [ESLint](http://eslint.org) for JavaScript code style and syntax validation.
+```
+npm run lint
 ```
 
 ### Code coverage
