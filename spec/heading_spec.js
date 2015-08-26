@@ -22,24 +22,44 @@ describe('Heading', function() {
     expect(validation).to.be.ok;
   });
 
-  it('is not a DOM component', function() {
+  describe('rendered into DOM', function() {
     let component = ReactTestUtils.renderIntoDocument(<Heading />);
-    let validation = ReactTestUtils.isDOMComponent(component);
 
-    expect(validation).to.not.be.ok;
+    it('is not a DOM component', function() {
+      let validation = ReactTestUtils.isDOMComponent(component);
+
+      expect(validation).to.not.be.ok;
+    });
+
+    it('is a composite component', function() {
+      let validation = ReactTestUtils.isCompositeComponent(component);
+
+      expect(validation).to.be.ok;
+    });
+
+    it('is a composite Heading component', function() {
+      let validation = ReactTestUtils.isCompositeComponentWithType(component, Heading);
+
+      expect(validation).to.be.ok;
+    });
   });
 
-  it('is a composite component', function() {
-    let component = ReactTestUtils.renderIntoDocument(<Heading />);
-    let validation = ReactTestUtils.isCompositeComponent(component);
+  describe('tested with shallow rendering technique', function() {
+    let headingComponent;
 
-    expect(validation).to.be.ok;
-  });
+    before( function() {
+      let shallowRenderer = ReactTestUtils.createRenderer();
 
-  it('is a composite Heading component', function() {
-    let component = ReactTestUtils.renderIntoDocument(<Heading />);
-    let validation = ReactTestUtils.isCompositeComponentWithType(component, Heading);
+      shallowRenderer.render( <Heading/> );
+      headingComponent = shallowRenderer.getRenderOutput();
+    });
 
-    expect(validation).to.be.ok;
+    it('renders <h1> root element', function() {
+      expect( headingComponent.type ).to.equal( 'h1' );
+    });
+
+    it('has class set to blue', function() {
+      expect( headingComponent.props.className ).to.equal( 'blue' );
+    });
   });
 });

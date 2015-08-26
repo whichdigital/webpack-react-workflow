@@ -1,4 +1,5 @@
-import './app.css';
+import './core/core.scss';
+import './navigation/links.scss';
 
 import React from 'react';
 import Book from './book/book.js';
