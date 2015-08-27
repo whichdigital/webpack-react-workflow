@@ -32,16 +32,16 @@ module.exports = function(config) {
 
     webpack: {
       module: {
-       preLoaders: [
-         { test: /\.jsx?$/, loader: 'isparta', exclude: /\/(spec|node_modules)\// },
-         { test: /\.jsx?$/, loader: 'eslint', exclude: /(node_modules)/ }
-       ],
-       loaders: [
-         { test: /\.jsx?$/, loader: 'babel', exclude: /(node_modules)/ },
-         { test: /\.css$/, loaders: ['style', 'css'], exclude: /(node_modules)/ },
-         { test: /\.scss$/, loaders: ['style', 'css', 'sass'], exclude: /(node_modules)/ }
-       ]
-     }
+        preLoaders: [
+          { test: /\.jsx?$/, loader: 'isparta', exclude: /\/(spec|node_modules)\// },
+          { test: /\.jsx?$/, loader: 'eslint', exclude: /(node_modules)/ }
+        ],
+        loaders: [
+          { test: /\.jsx?$/, loader: 'babel', exclude: /(node_modules)/ },
+          { test: /\.css$/, loaders: ['style', 'css'], exclude: /(node_modules)/ },
+          { test: /\.scss$/, loaders: ['style', 'css', 'sass'], exclude: /(node_modules)/ }
+        ]
+      }
     },
 
 
@@ -80,5 +80,5 @@ module.exports = function(config) {
     // Continuous Integration mode
     // if true, Karma captures browsers, runs the tests and exits
     singleRun: false
-  })
-}
+  });
+};
