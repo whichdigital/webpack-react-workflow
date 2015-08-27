@@ -1,6 +1,7 @@
 @import '../colour/colours.scss';
 
 h1 {
+  display: flex;
   &.blue {
     color: $blue;
   }

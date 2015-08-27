@@ -1,5 +1,6 @@
 var path = require('path');
 var webpack = require('webpack');
+var autoprefixer = require('autoprefixer');
 
 module.exports = {
   entry: [
@@ -31,11 +32,12 @@ module.exports = {
       },
       {
         test: /\.scss$/,
-        loaders: ['style', 'css', 'sass'],
+        loaders: ['style', 'css', 'postcss', 'sass'],
         exclude: /(node_modules)/
       }
     ]
   },
+  postcss: [autoprefixer],
   devtool: 'source-map',
   devServer: {
     contentBase: 'http://localhost:5001'
