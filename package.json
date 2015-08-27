@@ -36,7 +36,7 @@
     "clean": "rm -fr tmp/coverage/javascript/* && rm -fr dist/*",
     "dev-server": "node webpack-dev-server.js",
     "start": "http-server -p 5001",
-    "lint": "eslint --ignore-pattern dist ./; exit 0",
+    "lint": "eslint ./; exit 0",
     "test": "karma start"
   },
   "repository": {
