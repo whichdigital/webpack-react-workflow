@@ -4,8 +4,8 @@ npm install
 ```
 
 ## Workflow
-1. Run `webpack-dev-server` acting as a static content HTTP server with hot
-module replacement enabled on port 5000:
+1. Run `webpack-dev-server` acting as an asset server with hot module
+replacement enabled on port 5000:
 >```
 >npm run dev-server
 >```
@@ -17,7 +17,10 @@ We have opted for [http-server](https://www.npmjs.com/package/http-server).
 >npm start
 >```
 
-3. Open http://localhost:5001 in your browser.
+3. Open http://localhost:5001 in your browser. If you are on OS X you can run:
+>```
+>npm run browse
+>```
 
 4. Make a change in any of your scripts or stylesheets - you should see these
 changes applied in the browser instantaneously.
@@ -64,3 +67,5 @@ from command line (at least in the current configuration).
 ```
 npm run clean
 ```
+
+This will remove contents of `dist` and `tmp/coverage/javascript` directories.
