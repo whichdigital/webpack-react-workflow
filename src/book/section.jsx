@@ -1,6 +1,6 @@
 import React from 'react';
-import Heading from './heading.jsx'; // eslint-disable-line no-unused-vars
-import Description from './description.jsx'; // eslint-disable-line no-unused-vars
+import Heading from './heading.jsx';
+import Description from './description.jsx';
 
 export default class extends React.Component {
   render() {

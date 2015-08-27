@@ -1,6 +1,6 @@
 import 'core-js/es5';
 import React from 'react/addons';
-import Section from '../src/book/section.jsx'; // eslint-disable-line no-unused-vars
+import Section from '../src/book/section.jsx';
 import Heading from '../src/book/heading.jsx';
 import Description from '../src/book/description.jsx';
 
