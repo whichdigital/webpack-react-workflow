@@ -2,6 +2,11 @@
   "name": "webpack-react-workflow",
   "version": "0.1.0",
   "description": "A dummy project on how to integrate React and Webpack in a Web project",
+  "dependencies": {
+    "alt": "^0.17.3",
+    "node-uuid": "^1.4.3",
+    "react": "^0.13.3"
+  },
   "devDependencies": {
     "autoprefixer": "^5.2.0",
     "babel-core": "^5.8.22",
@@ -22,7 +27,6 @@
     "mocha": "^2.2.5",
     "node-sass": "3.2.0",
     "postcss-loader": "^0.6.0",
-    "react": "^0.13.3",
     "react-hot-loader": "^1.2.8",
     "sass-loader": "^2.0.0",
     "style-loader": "^0.12.3",
