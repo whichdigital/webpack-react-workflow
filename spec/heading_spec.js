@@ -1,12 +1,13 @@
 import 'core-js/es5';
-import React from 'react/addons';
+/*eslint-disable */
+import React from 'react';
+/*eslint-enable */
+import TestUtils from 'react-addons-test-utils';
 import Heading from '../src/book/heading.jsx';
-
-var ReactTestUtils = React.addons.TestUtils;
 
 describe('Heading', function() {
   it('is a React element', function() {
-    let validation = ReactTestUtils.isElement(
+    let validation = TestUtils.isElement(
       <Heading />
     );
 
@@ -14,7 +15,7 @@ describe('Heading', function() {
   });
 
   it('is a Heading React element', function() {
-    let validation = ReactTestUtils.isElementOfType(
+    let validation = TestUtils.isElementOfType(
       <Heading />,
       Heading
     );
@@ -23,22 +24,22 @@ describe('Heading', function() {
   });
 
   describe('rendered into DOM', function() {
-    let component = ReactTestUtils.renderIntoDocument(<Heading />);
+    let component = TestUtils.renderIntoDocument(<Heading />);
 
     it('is not a DOM component', function() {
-      let validation = ReactTestUtils.isDOMComponent(component);
+      let validation = TestUtils.isDOMComponent(component);
 
       expect(validation).to.not.be.ok;
     });
 
     it('is a composite component', function() {
-      let validation = ReactTestUtils.isCompositeComponent(component);
+      let validation = TestUtils.isCompositeComponent(component);
 
       expect(validation).to.be.ok;
     });
 
     it('is a composite Heading component', function() {
-      let validation = ReactTestUtils.isCompositeComponentWithType(component, Heading);
+      let validation = TestUtils.isCompositeComponentWithType(component, Heading);
 
       expect(validation).to.be.ok;
     });
@@ -48,7 +49,7 @@ describe('Heading', function() {
     let headingComponent;
 
     before( function() {
-      let shallowRenderer = ReactTestUtils.createRenderer();
+      let shallowRenderer = TestUtils.createRenderer();
 
       shallowRenderer.render( <Heading/> );
       headingComponent = shallowRenderer.getRenderOutput();
