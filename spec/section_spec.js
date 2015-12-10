@@ -1,5 +1,8 @@
 import 'core-js/es5';
-import React from 'react/addons';
+/*eslint-disable */
+import React from 'react';
+/*eslint-enable */
+import TestUtils from 'react-addons-test-utils';
 import Section from '../src/book/section.jsx';
 import Heading from '../src/book/heading.jsx';
 import Description from '../src/book/description.jsx';
@@ -8,8 +11,7 @@ describe('Section', function() {
   let sectionComponent;
 
   before(function() {
-    let ReactTestUtils = React.addons.TestUtils,
-      shallowRenderer = ReactTestUtils.createRenderer();
+    let shallowRenderer = TestUtils.createRenderer();
 
     shallowRenderer.render( <Section/> );
     sectionComponent = shallowRenderer.getRenderOutput();
